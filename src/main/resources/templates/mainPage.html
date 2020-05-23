@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cache testing app</title>
+</head>
+
+<body>
+    <h1>This is a sample application for showing the speed differences when Hibernate cache is enabled/disabled</h1>
+    <h2>Usage</h2>
+    <p>You can define start and finish IDs of elements inserted/selected by ID in forms below.
+        If range is larger than 3000, then start=0, finish = 3000<br/>
+        You can select objects which weren't inserted and insert objects with same IDs again - they are generated
+        randomly and won't be the same.
+    </p>
+    <p>Insertion form:</p>
+    <form action="/insert" method="post">
+        Ranges to insert: <input type="number" name="rangeStart" id="rangesPost"> - <input type="number" name="rangeFinish" id="rangesPost"><br>
+        Cached: <input type="checkbox" name="cached" id="cachedPost"><br/>
+        <button type="submit">Insert range</button>
+    </form>
+    <p>Select form:</p>
+    <form action="/select" method="get">
+        Ranges to get: <input type="text" name="rangeStart" id="rangesGet"> - <input type="text" name="rangeFinish" id="rangesGet"><br/>
+        Cached: <input type="checkbox" name="cached" id="cachedGet"><br/>
+        <button type="submit">Select range</button>
+    </form>
+</body>
+
+</html>
